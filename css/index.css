@@ -8,15 +8,15 @@
         * DONE Tablet view, header a moves above nav - nav takes up 100% width
         * DONE Tablet view, logo is 100% width, centered 
 
-        * Mobile view, nav is flex-direction column with top and bottom border (grey)
-        * Mobile view, Section 2 flex-direction column
-        * Mobile view, Section 3 flex-direction column
+        * DONE Mobile view, nav is flex-direction column with top and bottom border (grey)
+        * DONE Mobile view, Section 2 flex-direction column
+        * DONE Mobile view, Section 3 flex-direction column
 
     DONE Insert a viewport meta tag into the head of the project with these html attributes: content="width=device-width, initial-scale=1"
     
     DONE Introduce max-width media queries into your project at 800px and 500px
     
-    Do your best to make your styles match the design files at each breakpoint
+    DONE Do your best to make your styles match the design files at each breakpoint
     
     Stretch Goals:
     
@@ -227,9 +227,32 @@ footer {
     header nav {
         width: 90%;
         margin: 2rem;
-    }
+	}
+	.container {
+		width: 100vw;
+		margin: auto;
+	}
 }
 /* Phone Media query */
 @media(max-width: 500px) {
-
+    header nav {
+        flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	header nav a {
+		border: 1px solid grey;
+		width: 100vw;
+		text-align: center;
+		padding: 1rem;
+	}
+	.section2 {
+		flex-direction: column;		
+	}
+	section {
+		margin-top: 1rem;
+	}
+	.section3 {
+		flex-direction: column;
+	}
 }
