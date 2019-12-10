@@ -20,9 +20,9 @@
     
     Stretch Goals:
     
-    DONE, see services.html Create a tablet and mobile version of the services page from previous projects
+    Create a tablet and mobile version of the services page from previous projects
     
-    DONE, see mobileFirst.css  Once you have completed the project with max-width media queries, start over with min-width media queries to get a feel for how a mobile first approach would be like. I recommend making a copy of all your contents in a new folder named "mobile-first" to keep it separate */
+    DONE Once you have completed the project with max-width media queries, start over with min-width media queries to get a feel for how a mobile first approach would be like. I recommend making a copy of all your contents in a new folder named "mobile-first" to keep it separate */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,7 +47,7 @@ time, mark, audio, video {
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+	display: flex;
 }
 body {
 	line-height: 1;
@@ -82,32 +82,40 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-	width: 800px;
+	width: 100vw;
 	margin: auto;
 }
 header {
-	width: 100%;
+	width: 100vw;
 	display: flex;
+	flex-direction: column-reverse;
 	justify-content: space-between;
 	align-items: center;	
-	padding: 25px 0;
+	padding: 25px 0;	
 }
-header nav {	
-	width: 60%;
-	display: flex;
-	justify-content: space-between;
+header nav {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
 }
 header nav a {
+	border: 1px solid grey;
+	width: 100vw;
+	text-align: center;
+	padding: 1rem;
 	color: #666;
 	text-decoration: none;
 	font-size: 13px;
+	flex-direction: column;
 }
+
 .hero {
 	width: 100%;
 	padding: 2.5em 1em;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;	
+	justify-content: center;	
 }
 .hero .hero-text {
 	display: flex;
@@ -129,9 +137,13 @@ header nav a {
 	margin: 0 auto;
 	padding: 7px 25px; 
 }
+.hero-image {
+	display: none;
+}
 .section2{
 	display: flex;
 	margin: 20px 0;
+	flex-direction: column;
 }
 .section2 section {
 	line-height: 1.15;
@@ -139,11 +151,17 @@ header nav a {
 }
 .section3{
 	display: flex;
-	margin: 20px 0;
+	margin:  20px 0;
+	flex-direction: column;
 }
 .section3 section {
 	line-height: 1.15;
 	margin-right: 15px;
+}
+section {
+	width: 100vw;
+	justify-content: center;
+	display: block;
 }
 .middle-img,
 .services-header-img {
@@ -157,7 +175,7 @@ header nav a {
 .contact p {
 	line-height: 1.75;
 }
-.col {
+.col{
 	border: 1px solid black;
 }
 .row{
@@ -165,7 +183,7 @@ header nav a {
 	justify-content: space-between;
 	margin: 4% 0;
 }
-.row section{
+.row section {
 	border: 1px solid #ccc;
 	background: rgb(241, 241, 241);
 	padding: 25px;
@@ -184,7 +202,7 @@ header nav a {
 	display: inline-block;
 	margin: 5px 0;
 }
-.row2 {
+.row2{
 	display:flex;
 	justify-content: space-between;
 }
@@ -214,13 +232,8 @@ footer {
 }
 
 /* Tablet Media query */
-@media(max-width: 800px) {
-    .hero-image {
-        display: none;
-    }
-    .hero {
-        justify-content: center;
-    }
+@media(min-width: 800px) {
+   
     header {
         flex-direction: column-reverse;        
     }
@@ -231,15 +244,19 @@ footer {
 	.container {
 		width: 100vw;
 		margin: auto;
-	}
-	.row2 {
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
+	}	
 }
-/* Phone Media query */
-@media(max-width: 500px) {
+/* Desktop Media query */
+@media(min-width: 1200px) {
+	.hero-image {
+        display: block;
+	}
+	.hero {
+		justify-content: space-between;
+	}
+	.hero-text {
+		justify-content: center;
+	}
     header nav {
         flex-direction: column;
 		justify-content: center;
@@ -252,13 +269,12 @@ footer {
 		padding: 1rem;
 	}
 	.section2 {
-		flex-direction: column;		
+		flex-direction: row;		
 	}
 	section {
 		margin-top: 1rem;
 	}
 	.section3 {
-		flex-direction: column;
+		flex-direction: row;
 	}
-	
 }
