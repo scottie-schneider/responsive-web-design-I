@@ -1,3 +1,235 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* 
+    DONE Review each design file. Notice the subtle differences between them all.
+        * DONE Tablet view, hero-image disappears, hero-text is centered. 
+        * DONE Tablet view, header a moves above nav - nav takes up 100% width
+        * DONE Tablet view, logo is 100% width, centered 
 
+        * Mobile view, nav is flex-direction column with top and bottom border (grey)
+        * Mobile view, Section 2 flex-direction column
+        * Mobile view, Section 3 flex-direction column
 
+    DONE Insert a viewport meta tag into the head of the project with these html attributes: content="width=device-width, initial-scale=1"
+    
+    DONE Introduce max-width media queries into your project at 800px and 500px
+    
+    Do your best to make your styles match the design files at each breakpoint
+    
+    Stretch Goals:
+    
+    Create a tablet and mobile version of the services page from previous projects
+    
+    Once you have completed the project with max-width media queries, start over with min-width media queries to get a feel for how a mobile first approach would be like. I recommend making a copy of all your contents in a new folder named "mobile-first" to keep it separate */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.container {
+	width: 800px;
+	margin: auto;
+}
+header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;	
+	padding: 25px 0;
+}
+header nav {	
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
+header nav a {
+	color: #666;
+	text-decoration: none;
+	font-size: 13px;
+}
+.hero {
+	width: 100%;
+	padding: 2.5em 1em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;	
+}
+.hero .hero-text {
+	display: flex;
+	text-align: center;	
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 50px;
+}
+.hero .hero-text h1 {
+	font-size: 52px;	
+}
+.hero .hero-text a {
+	border: 1px solid #666;
+	font-size: 15px;
+	color: black;
+	font-weight: 600;
+	text-decoration: none;
+	width: 150px;
+	margin: 0 auto;
+	padding: 7px 25px; 
+}
+.section2{
+	display: flex;
+	margin: 20px 0;
+}
+.section2 section {
+	line-height: 1.15;
+	margin-right: 15px;
+}
+.section3{
+	display: flex;
+	margin: 20px 0;
+}
+.section3 section {
+	line-height: 1.15;
+	margin-right: 15px;
+}
+.middle-img,
+.services-header-img {
+	width: 100%;
+	padding: 20px 0;
+}
+.contact {
+	padding: 0 10px;
+}
+
+.contact p {
+	line-height: 1.75;
+}
+.col{
+	border: 1px solid black;
+}
+.row{
+	display: flex;
+	justify-content: space-between;
+	margin: 4% 0;
+}
+.row section{
+	border: 1px solid #ccc;
+	background: rgb(241, 241, 241);
+	padding: 25px;
+	width: 48%;
+}
+.row section p{
+	line-height: 1.2;
+	margin: 5px 0;
+}
+.row section a{
+	text-decoration: none;
+	color: black;
+	background: #fff;
+	padding: 2px 10px;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 5px 0;
+}
+.row2{
+	display:flex;
+	justify-content: space-between;
+}
+.row2 section {
+	padding: 25px 0;
+	width: 48%;
+}
+.row2 img{
+	width: 48%;
+}
+.row2 ul{
+	margin: 20px 0;
+}
+.row2 ul li {
+	list-style-type: square;
+	margin-left: 17px;
+}
+hr{
+	background: black;
+	padding: .5px;
+	margin-bottom: 20px;
+}
+footer {
+	width: 100%;
+	text-align: center;
+	padding: 25px 0 10px 0 ;
+}
+
+/* Tablet Media query */
+@media(max-width: 800px) {
+    .hero-image {
+        display: none;
+    }
+    .hero {
+        justify-content: center;
+    }
+    header {
+        flex-direction: column-reverse;        
+    }
+    header nav {
+        width: 90%;
+        margin: 2rem;
+    }
+}
+/* Phone Media query */
+@media(max-width: 500px) {
+
+}
